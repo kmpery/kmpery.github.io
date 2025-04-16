@@ -13,11 +13,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Gunakan router untuk /comments
 app.use('/comments', commentRoutes);
 
-// Koneksi ke MongoDB
+// Koneksi ke MongoDB Atlas
 mongoose
-  .connect('mongodb://localhost:27017/weddingDB')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.log('Failed to connect to MongoDB', err));
+  .connect(
+    'mongodb+srv://perrikembali2:102938@kmpery.cg7knbu.mongodb.net/weddingDB?retryWrites=true&w=majority'
+  )
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch((err) => console.log('Failed to connect to MongoDB Atlas', err));
 
 // Jalankan server
 app.listen(3000, () => {
