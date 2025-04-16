@@ -1,27 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const Comment = require('../models/comment'); // Impor model Comment untuk berinteraksi dengan MongoDB
+const Comment = require('../models/comment');
 
-// Rute untuk mendapatkan semua komentar
+// Ambil komentar terbaru dulu
 router.get('/', async (req, res) => {
   try {
-    const comments = await Comment.find();
+    const comments = await Comment.find().sort({ createdAt: -1 }); // urutkan terbaru
     res.json(comments);
   } catch (err) {
     res.status(500).json({ message: 'Gagal mengambil komentar' });
   }
 });
 
-// Rute untuk menambahkan komentar baru
+// Tambah komentar
 router.post('/', async (req, res) => {
   const { name, message } = req.body;
   try {
     const newComment = new Comment({ name, message });
     await newComment.save();
-    res.status(201).json(newComment); // Mengirimkan komentar yang baru ditambahkan
+    res.status(201).json(newComment);
   } catch (err) {
     res.status(500).json({ message: 'Gagal menambahkan komentar' });
   }
 });
 
-module.exports = router; // Mengekspor router agar bisa digunakan di file utama (app.js)
+module.exports = router;

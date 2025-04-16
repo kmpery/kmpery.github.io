@@ -383,6 +383,13 @@ body {
   color: white;
 }
 
+.rsvp input,
+.rsvp select,
+.comments input,
+.comments textarea {
+  background-color: #ffe4e1;
+}
+
 .rsvp button,
 .comments button,
 .alamat a {
@@ -594,14 +601,20 @@ footer li {
 }
 
 #commentsList li {
-  background-color: #ffffff;
-  padding: 15px;
+  background-color: #ffe4e1;
+  color: var(--pink);
+  padding: 1.5px;
   margin-bottom: 10px;
-  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   max-width: 70%;
   word-wrap: break-word;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
 }
 
 #commentCount {

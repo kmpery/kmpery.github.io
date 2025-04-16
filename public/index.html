@@ -120,8 +120,9 @@
               <div class="col-8 text-end">
                 <h3>Nursalim S.H</h3>
                 <li>
-                  <a href="https://www.instagram.com/perrikembali/"
-                    ><i class="bi bi-instagram"> @nursalim</i></a
+                  <a
+                    href="https://www.instagram.com/_aaaalim?igsh=MmFjYTZhYjBvOWxk&utm_source=qr"
+                    ><i class="bi bi-instagram"> @_aaaalim</i></a
                   >
                 </li>
                 <p>
@@ -131,11 +132,17 @@
                 </p>
               </div>
               <div class="col-4">
-                <img
-                  src="img/image/portfolio/portfolio-1.jpg"
-                  alt="image"
-                  class="img-responsive rounded-circle"
-                />
+                <a
+                  href="img/about-1.jpg"
+                  data-fancybox="about-1"
+                  data-caption="Nursalim"
+                >
+                  <img
+                    src="img/about-1.jpg"
+                    alt="image"
+                    class="img-responsive rounded-circle"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -145,11 +152,17 @@
           <div class="col-lg-6">
             <div class="row">
               <div class="col-4">
-                <img
-                  src="img/image/portfolio/portfolio-1.jpg"
-                  alt="image"
-                  class="img-responsive rounded-circle"
-                />
+                <a
+                  href="img/about-1.jpg"
+                  data-fancybox="about-2"
+                  data-caption="Risa Inda Sari"
+                >
+                  <img
+                    src="img/about-1.jpg"
+                    alt="image"
+                    class="img-responsive rounded-circle"
+                  />
+                </a>
               </div>
               <div class="col-8">
                 <h3>Risa Inda Sari</h3>
@@ -631,12 +644,14 @@
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Nama"
                 required
                 class="form-control mb-2"
               />
               <textarea
                 id="message"
+                name="message"
                 placeholder="Tulis ucapan"
                 required
                 class="form-control mb-2"
@@ -897,10 +912,10 @@
             body: JSON.stringify(commentData),
           })
             .then((response) => response.json())
-            .then((data) => {
-              displayComment(data);
-              document.getElementById('commentForm').reset();
-              fetchComments(); // refresh jumlah komentar
+            .then((newComment) => {
+              // Menambahkan komentar baru langsung di atas
+              displayComment(newComment);
+              document.getElementById('commentForm').reset(); // Reset form setelah submit
             })
             .catch((error) => {
               console.error('Error:', error);
@@ -912,8 +927,34 @@
         const commentList = document.getElementById('commentsList');
         const listItem = document.createElement('li');
         listItem.classList.add('mb-3');
-        listItem.innerHTML = `<strong>${comment.name}</strong>: <p>${comment.message}</p>`;
-        commentList.appendChild(listItem);
+
+        const createdAt = dayjs(comment.createdAt);
+        const now = dayjs();
+        const diffInHours = now.diff(createdAt, 'hour');
+
+        let timeDisplay = '';
+
+        if (diffInHours >= 24) {
+          timeDisplay = createdAt.format('dddd, D MMMM YYYY');
+        } else {
+          timeDisplay = createdAt.fromNow();
+        }
+
+        // Ganti \n dengan <br> agar baris baru terlihat
+        const cleanMessage = comment.message.replace(/\n/g, '<br>');
+
+        listItem.innerHTML = `
+    <div class="p-3">
+      <div class="d-flex justify-content-between">
+        <strong class="me-2">${comment.name}</strong>
+        <small class="text-muted">${timeDisplay}</small>
+      </div>
+      <p class="mt-2 mb-0 text-start">${cleanMessage}</p>
+    </div>
+  `;
+
+        // Menambahkan komentar terbaru ke atas daftar (seperti menumpuk buku)
+        commentList.prepend(listItem);
       }
 
       function fetchComments() {
@@ -921,17 +962,20 @@
           .then((response) => response.json())
           .then((comments) => {
             const commentList = document.getElementById('commentsList');
-            commentList.innerHTML = ''; // Kosongkan dulu
+            commentList.innerHTML = ''; // Kosongkan daftar komentar
 
             if (Array.isArray(comments)) {
               document.getElementById(
                 'commentCount'
               ).textContent = `(${comments.length})`;
-              comments.forEach((comment) => {
-                displayComment(comment);
-              });
-            } else {
-              console.error('Komentar bukan array:', comments);
+
+              // Balik urutan array agar komentar terbaru muncul di atas
+              comments
+                .slice()
+                .reverse()
+                .forEach((comment) => {
+                  displayComment(comment);
+                });
             }
           })
           .catch((error) => {
@@ -940,7 +984,17 @@
           });
       }
 
+      // Panggil saat halaman selesai dimuat
       window.addEventListener('load', fetchComments);
+    </script>
+
+    <!-- dayjs untuk waktu manusiawi -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/id.js"></script>
+    <script>
+      dayjs.extend(dayjs_plugin_relativeTime);
+      dayjs.locale('id');
     </script>
   </body>
 </html>
