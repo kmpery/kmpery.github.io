@@ -48,7 +48,7 @@
     >
       <main>
         <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
-        <h1>Alim & Risa</h1>
+        <h1>Alim <span>&</span> Risa</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam :</p>
         <div class="simply-countdown"></div>
         <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"
@@ -59,7 +59,7 @@
 
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
-        <a class="navbar-brand" href="#">A&R</a>
+        <a class="navbar-brand" href="#">A<span> & </span>R</a>
         <button
           class="navbar-toggler border-0"
           type="button"
@@ -77,7 +77,7 @@
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">A&R</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">A<span> & </span>R</h5>
             <button
               type="button"
               class="btn-close"
@@ -182,27 +182,24 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cots">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <h3>
-              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
-              لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
-              إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
-            </h3>
-            <p>
-              Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-              pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
-              cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-              antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
-              benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
-              berpikir.
-            </p>
-            <span>(Q.S. Ar-Rum: 21)</span>
+        <div class="container" id="cots">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <h3>
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+                لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+                إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+              </h3>
+              <p>
+                Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+                pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
+                cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
+                antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
+                benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum
+                yang berpikir.
+              </p>
+              <span>(Q.S. Ar-Rum: 21)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -308,10 +305,17 @@
           <div class="col">
             <ul class="timeline">
               <li>
-                <div
-                  class="timeline-image"
-                  style="background-image: url(img/story/wedding-1.jpg)"
-                ></div>
+                <a
+                  href="img/story/wedding-1.jpg"
+                  data-fancybox="story"
+                  data-caption="Pertama Bertemu"
+                >
+                  <div
+                    class="timeline-image"
+                    style="background-image: url(img/story/wedding-1.jpg)"
+                  ></div
+                ></a>
+
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Pertama Bertemu</h3>
@@ -330,10 +334,17 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div
-                  class="timeline-image"
-                  style="background-image: url(img/story/wedding-2.jpg)"
-                ></div>
+                <a
+                  href="img/story/wedding-1.jpg"
+                  data-fancybox="story"
+                  data-caption="Mulai Serius"
+                >
+                  <div
+                    class="timeline-image"
+                    style="background-image: url(img/story/wedding-2.jpg)"
+                  ></div
+                ></a>
+
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Mulai Serius</h3>
@@ -350,10 +361,17 @@
                 </div>
               </li>
               <li>
-                <div
-                  class="timeline-image"
-                  style="background-image: url(img/story/wedding-3.jpg)"
-                ></div>
+                <a
+                  href="img/story/wedding-1.jpg"
+                  data-fancybox="story"
+                  data-caption="Tunangan"
+                >
+                  <div
+                    class="timeline-image"
+                    style="background-image: url(img/story/wedding-3.jpg)"
+                  ></div
+                ></a>
+
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Tunangan</h3>
@@ -381,6 +399,7 @@
           <div class="col-md-8 col-10 text-center">
             <span>Memory Kisah Kita</span>
             <h2>Galery Foto</h2>
+            <br />
             <p>Photo-photo kebahagian kami yang kami kenang selalu.</p>
           </div>
         </div>
@@ -804,7 +823,7 @@
       function enableScroll() {
         window.onscroll = function () {};
         rootElement.style.scrollBehavior = 'smooth';
-        // localStorage.setItem("opened", "true");
+        // localStorage.setItem('opened', 'true'); // local
         playAudio();
       }
 

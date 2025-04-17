@@ -10,6 +10,16 @@ body {
 }
 
 body {
+  background-image: url(img/bg.png);
+  background-repeat: repeat;
+  background-size: 200px; /* Ubah sesuai selera */
+  background-position: center;
+  background-color: #fff5f8;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
+}
+
+body {
   font-size: 1.2rem;
   font-family: 'Work Sans', sans-serif;
   min-height: 4000px;
@@ -41,13 +51,19 @@ body {
 
 .hero h4 span {
   color: blue;
-  text-shadow: none;
+  text-shadow: var(--shadow);
 }
 
 .hero h1 {
   font-family: 'Ephesis', cursive;
   font-size: 6rem;
   color: var(--pink);
+  text-shadow: var(--shadow);
+}
+
+h1 span {
+  color: #fff5f8;
+  font-size: 3.5rem;
 }
 
 .hero h4 {
@@ -56,17 +72,27 @@ body {
 
 .hero p {
   font-size: 1.6rem;
+  text-shadow: var(--shadow);
 }
 
 .hero a {
   color: var(--pink);
-  background-color: #ffffff;
+  background-color: #fff5f8;
   box-shadow: var(--shadow);
 }
 
 .hero a:hover {
   background-color: var(--pink);
   color: #ffffff;
+}
+
+.navbar span {
+  color: var(--pink);
+  font-size: 2.5rem;
+}
+
+.offcanvas {
+  background-color: #fff5f8;
 }
 
 .mynavbar {
@@ -103,19 +129,16 @@ body {
 }
 
 .home {
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   margin-top: -6rem;
   padding-top: 15rem;
   padding-bottom: 5rem;
 }
 
-.cots {
+#cots {
   background-size: cover;
   min-height: 30vh;
-  margin-top: -6rem;
-  padding-top: 3rem;
+  margin-top: 10rem;
 }
 
 .home h2,
@@ -188,7 +211,7 @@ body {
 }
 
 .info {
-  background-color: var(--bg);
+  background-color: #00000090;
   color: #ffffff;
   padding-top: 10rem;
   padding-bottom: 8rem;
@@ -206,9 +229,9 @@ body {
 }
 
 .info .card {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-  border: 1px solid #999;
+  background-color: #555 !important;
+  color: #fff5f8 !important;
+  border: 0.8px solid #999;
 }
 
 .info .card-header {
@@ -262,9 +285,11 @@ body {
   font-weight: 300;
 }
 
-.gifts img {
+.gifts img,
+.gifts li {
   border: none;
   outline: none;
+  background: none;
 }
 
 .timeline {
@@ -319,7 +344,7 @@ body {
   padding: 2rem;
   position: relative;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #fff5f8;
 }
 
 .timeline li .timeline-panel::before {
@@ -339,8 +364,8 @@ body {
   position: absolute;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid #fff5f8;
+  border-right: 0 solid #fff5f8;
   border-bottom: 14px solid transparent;
   top: 81px;
   right: -13px;
@@ -363,12 +388,13 @@ body {
   right: auto;
 }
 
-.gallery {
-  background-color: #ffffff;
+.rsvp,
+#comments {
+  background-color: #00000090;
 }
 
-.rsvp {
-  background-color: var(--bg);
+.gallery {
+  background-color: transparent;
 }
 
 .rsvp h2 {
@@ -387,7 +413,7 @@ body {
 .rsvp select,
 .comments input,
 .comments textarea {
-  background-color: #ffe4e1;
+  background-color: #fff5f8;
 }
 
 .rsvp button,
@@ -400,7 +426,7 @@ body {
 
 .rsvp button:hover,
 .alamat a:hover {
-  background-color: white;
+  background-color: #fff5f8;
   color: var(--pink);
   border: 1px solid white;
 }
@@ -415,12 +441,12 @@ ul.list-group li {
 
 footer {
   padding: 3rem;
-  background-color: var(--pink);
+  background-color: var(--bg);
   color: white;
 }
 
 footer a {
-  color: var(--bg);
+  color: var(--pink);
   font-weight: bold;
   text-decoration: none;
 }
@@ -443,8 +469,9 @@ footer li {
   bottom: 2.5rem;
   right: 2rem;
   cursor: pointer;
-  color: #ccc;
-  opacity: 0.5;
+  color: #000000;
+  opacity: 0.8;
+  background-color: transparent;
   mix-blend-mode: difference;
   animation: rotating 2s linear infinite;
   transform-origin: center;
@@ -452,6 +479,7 @@ footer li {
   justify-content: center;
   align-items: center;
   line-height: 0;
+  z-index: 9999; /* tetap paling depan */
 }
 
 @keyframes rotating {
@@ -470,6 +498,7 @@ footer li {
     transform: translateX(-50%) translateY(45px);
   }
 }
+
 /* laptop */
 @media (max-width: 992px) {
   html {
@@ -543,7 +572,7 @@ footer li {
   }
 
   #commentsList li {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
@@ -579,29 +608,29 @@ footer li {
   cursor: pointer;
 }
 
-.comments {
-  padding: 50px 0;
-  background-color: #f9f9f9;
+.comments p {
+  color: #ffffff;
 }
 
 #commentForm {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 #commentForm input,
 #commentForm textarea {
   width: 100%;
   padding: 10px;
+  margin-top: 2rem;
 }
 
 #commentForm button:hover,
 .btn-outline-primary:hover {
-  background-color: #ffffff;
+  background-color: #fff5f8;
   color: var(--pink);
 }
 
 #commentsList li {
-  background-color: #ffe4e1;
+  background-color: #fff5f8;
   color: var(--pink);
   padding: 1.5px;
   margin-bottom: 10px;
@@ -617,12 +646,13 @@ footer li {
   padding-bottom: 10px;
 }
 
-#commentCount {
+#commentCount,
+h3 {
   font-weight: bold;
-  color: var(--bg);
+  color: var(--pink);
 }
 
 #commentsList li p {
   font-size: 1rem;
-  color: #555;
+  color: #000000;
 }

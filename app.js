@@ -10,6 +10,10 @@ dotenv.config();
 
 const app = express();
 
+//!liveserver
+const connectLivereload = require('connect-livereload');
+app.use(connectLivereload());
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -29,3 +33,12 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+//cek err
+// process.on('uncaughtException', (err) => {
+//   console.error('Uncaught Exception:', err);
+// });
+
+// process.on('unhandledRejection', (reason, promise) => {
+//   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+// });
