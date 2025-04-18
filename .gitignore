@@ -1,4 +1,5 @@
 .env
+.DS_Store
 # Node modules
 node_modules/
 
@@ -19,7 +20,6 @@ pids
 .env.*.local
 
 # OS-specific (macOS, Linux, Windows)
-.DS_Store
 Thumbs.db
 
 # IDE/editor folders (optional tapi disarankan)
@@ -58,4 +58,3 @@ coverage/
 
 # Remix
 /build/
-
