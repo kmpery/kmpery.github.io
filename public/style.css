@@ -17,6 +17,16 @@ body {
   background-color: #fff5f8;
   background-attachment: fixed;
   background-blend-mode: soft-light;
+  animation: animateBackground 30s linear infinite;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px; /* Arah & kecepatan gerakan, bisa kamu ubah */
+  }
 }
 
 body {
