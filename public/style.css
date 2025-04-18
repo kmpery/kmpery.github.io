@@ -281,8 +281,8 @@ h1 span {
 .rsvp p,
 .gifts p,
 .comments p {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  /* font-weight: 300; */
 }
 
 .gifts img,
@@ -634,9 +634,7 @@ footer li {
   color: var(--pink);
   padding: 1.5px;
   margin-bottom: 10px;
-  border-top-left-radius: 0;
   border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   max-width: 70%;
   word-wrap: break-word;
