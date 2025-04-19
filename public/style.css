@@ -560,7 +560,6 @@ ul.list-group li {
 #commentForm input,
 #commentForm textarea {
   width: 100%;
-  font-size: 16px;
   padding: 10px;
   margin-top: 2rem;
   margin-bottom: 50px;
@@ -764,6 +763,12 @@ footer li {
 
   .rsvp button {
     width: 100%;
+  }
+
+  input,
+  label,
+  textarea {
+    font-size: 16px !important;
   }
 }
 
