@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Great+Vibes&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Great+Vibes&family=Protest+Riot&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html,
 body {
   overflow-x: hidden;
@@ -9,15 +10,18 @@ body {
   --shadow: 0 2px rgb(0 0 0 / 0.2);
 }
 
+/* ======================================= */
+/* General */
+/* ======================================= */
 body {
   background-image: url(img/bg.png);
   background-repeat: repeat;
-  background-size: 200px; /* Ubah sesuai selera */
+  background-size: 200px;
   background-position: center;
   background-color: #fff5f8;
   background-attachment: fixed;
   background-blend-mode: soft-light;
-  animation: animateBackground 30s linear infinite;
+  animation: animateBackground 20s linear infinite;
 }
 
 @keyframes animateBackground {
@@ -31,10 +35,84 @@ body {
 
 body {
   font-size: 1.2rem;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   min-height: 4000px;
 }
 
+.home h2,
+.info h2,
+.story h2,
+.gallery h2,
+.rsvp h2,
+.gifts h2,
+.comments h2 {
+  color: var(--pink);
+  font-family: 'Protest Riot', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.story,
+.gallery,
+.rsvp,
+.gifts,
+.comments,
+.cots {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.story span,
+.gallery span,
+.gifts span,
+.cots span {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.story p,
+.gallery p,
+.rsvp p,
+.gifts p,
+.comments p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.rsvp,
+#comments {
+  background-color: #00000090;
+}
+
+.rsvp button,
+.comments button,
+.alamat a {
+  background-color: var(--pink);
+  color: white;
+  border: 1px solid var(--pink);
+}
+
+.rsvp button:hover,
+.alamat a:hover {
+  background-color: #fff5f8;
+  color: var(--pink);
+  border: 1px solid white;
+}
+
+.rsvp input,
+.rsvp select,
+.comments input,
+.comments textarea {
+  background-color: #fff5f8;
+}
+
+/* ======================================= */
+/* Hero  */
+/* ======================================= */
 .hero::before {
   content: '';
   position: absolute;
@@ -65,10 +143,11 @@ body {
 }
 
 .hero h1 {
-  font-family: 'Ephesis', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 6rem;
   color: var(--pink);
   text-shadow: var(--shadow);
+  margin-bottom: 50px;
 }
 
 h1 span {
@@ -78,6 +157,7 @@ h1 span {
 
 .hero h4 {
   font-size: 1.8rem;
+  margin-bottom: 50px;
 }
 
 .hero p {
@@ -95,7 +175,9 @@ h1 span {
   background-color: var(--pink);
   color: #ffffff;
 }
-
+/* ======================================= */
+/* Navbar  */
+/* ======================================= */
 .navbar span {
   color: var(--pink);
   font-size: 2.5rem;
@@ -129,7 +211,7 @@ h1 span {
 
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
-  font-family: 'Ephesis', cursive;
+  font-family: 'Climate Crisis', sans-serif;
   font-size: 3.2rem;
   font-weight: bold;
 }
@@ -138,6 +220,9 @@ h1 span {
   text-transform: uppercase;
 }
 
+/* ======================================= */
+/* Home  */
+/* ======================================= */
 .home {
   min-height: 100vh;
   margin-top: -6rem;
@@ -149,23 +234,6 @@ h1 span {
   background-size: cover;
   min-height: 30vh;
   margin-top: 10rem;
-}
-
-.home h2,
-.info h2,
-.story h2,
-.gallery h2,
-.rsvp h2,
-.gifts h2,
-.comments h2 {
-  color: var(--pink);
-  font-family: 'Great Vibes';
-  font-size: 5rem;
-  font-weight: bold;
-}
-.comments h2,
-.comments p {
-  text-align: center;
 }
 
 .home h3,
@@ -185,7 +253,7 @@ h1 span {
 }
 
 .home .couple h3 {
-  font-family: 'Ephesis', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 2.4rem;
   color: var(--pink);
 }
@@ -220,6 +288,9 @@ h1 span {
   color: var(--pink);
 }
 
+/* ======================================= */
+/* Info  */
+/* ======================================= */
 .info {
   background-color: #00000090;
   color: #ffffff;
@@ -260,48 +331,13 @@ h1 span {
   font-weight: 300;
 }
 
-.alamat a {
+.info a {
   align-items: center;
 }
 
-.story,
-.gallery,
-.rsvp,
-.gifts,
-.comments,
-.cots {
-  padding-top: 10rem;
-  padding-bottom: 8rem;
-}
-
-.story span,
-.gallery span,
-.gifts span,
-.cots span {
-  text-transform: uppercase;
-  color: #666;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.story p,
-.gallery p,
-.rsvp p,
-.gifts p,
-.comments p {
-  font-size: 1.1rem;
-  /* font-weight: 300; */
-}
-
-.gifts img,
-.gifts li {
-  border: none;
-  outline: none;
-  background: none;
-}
-
+/* ======================================= */
+/* Story  */
+/* ======================================= */
 .timeline {
   list-style: none;
   padding: 1.4rem 0;
@@ -398,15 +434,16 @@ h1 span {
   right: auto;
 }
 
-.rsvp,
-#comments {
-  background-color: #00000090;
-}
-
+/* ======================================= */
+/* Gallery  */
+/* ======================================= */
 .gallery {
   background-color: transparent;
 }
 
+/* ======================================= */
+/* Rsvp  */
+/* ======================================= */
 .rsvp h2 {
   font-size: 4.5rem;
 }
@@ -419,28 +456,6 @@ h1 span {
   color: white;
 }
 
-.rsvp input,
-.rsvp select,
-.comments input,
-.comments textarea {
-  background-color: #fff5f8;
-}
-
-.rsvp button,
-.comments button,
-.alamat a {
-  background-color: var(--pink);
-  color: white;
-  border: 1px solid var(--pink);
-}
-
-.rsvp button:hover,
-.alamat a:hover {
-  background-color: #fff5f8;
-  color: var(--pink);
-  border: 1px solid white;
-}
-
 ul.list-group {
   border: none;
 }
@@ -449,6 +464,104 @@ ul.list-group li {
   border: none;
 }
 
+.rsvp input select {
+  font-size: 12px;
+}
+
+/* ======================================= */
+/* gifts  */
+/* ======================================= */
+.list-group-item {
+  background-color: #00000090;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.list-group-item .fw-bold,
+.list-group-item .text-muted {
+  color: #fff5f8 !important;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.img-thumbnail {
+  border: none;
+  background: none;
+  filter: brightness(2) contrast(250%);
+}
+
+.btn-outline-secondary.btn-sm {
+  color: #fff5f8;
+  padding: 5px 12px;
+  font-size: 14px;
+  border: none;
+}
+
+.comments p {
+  color: #ffffff;
+}
+
+#commentForm input,
+#commentForm textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 2rem;
+  margin-bottom: 50px;
+}
+#commentForm textarea {
+  height: 120px;
+}
+
+#commentForm button:hover,
+.btn-outline-primary:hover {
+  background-color: #fff5f8;
+  color: var(--pink);
+}
+
+#commentsList li {
+  background-color: #fff5f8;
+  padding: 1.5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+#commentCount,
+h3 {
+  font-weight: bold;
+  color: var(--pink);
+}
+
+#commentsList li p {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.comments h2,
+.comments p {
+  text-align: center;
+}
+
+strong.username {
+  font-weight: bold;
+}
+
+/* ======================================= */
+/* Footer  */
+/* ======================================= */
 footer {
   padding: 3rem;
   background-color: var(--bg);
@@ -471,6 +584,9 @@ footer li {
   margin: 0.5rem;
 }
 
+/* ======================================= */
+/* Audio icon  */
+/* ======================================= */
 .audio-icon-wrapper {
   width: 4rem;
   height: 4rem;
@@ -479,17 +595,16 @@ footer li {
   bottom: 2.5rem;
   right: 2rem;
   cursor: pointer;
-  color: #000000;
+  color: var(--pink);
   opacity: 0.8;
   background-color: transparent;
-  mix-blend-mode: difference;
   animation: rotating 2s linear infinite;
   transform-origin: center;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 0;
-  z-index: 9999; /* tetap paling depan */
+  z-index: 9999;
 }
 
 @keyframes rotating {
@@ -501,15 +616,15 @@ footer li {
   }
 }
 
+/* ======================================= */
 /* !media query */
-/* extra large */
+/* ======================================= */
 @media (max-width: 1200px) {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
   }
 }
 
-/* laptop */
 @media (max-width: 992px) {
   html {
     font-size: 75%;
@@ -552,7 +667,6 @@ footer li {
   }
 }
 
-/* tablet */
 @media (max-width: 768px) {
   html {
     font-size: 65%;
@@ -584,9 +698,11 @@ footer li {
   #commentsList li {
     max-width: 95%;
   }
+  .rsvp button {
+    width: 100%;
+  }
 }
 
-/* mobile */
 @media (max-width: 576px) {
   html {
     font-size: 55%;
@@ -612,55 +728,8 @@ footer li {
   .timeline li .timeline-panel::after {
     top: 31px;
   }
-}
 
-.copy i {
-  cursor: pointer;
-}
-
-.comments p {
-  color: #ffffff;
-}
-
-#commentForm {
-  margin-bottom: 50px;
-}
-
-#commentForm input,
-#commentForm textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 2rem;
-}
-
-#commentForm button:hover,
-.btn-outline-primary:hover {
-  background-color: #fff5f8;
-  color: var(--pink);
-}
-
-#commentsList li {
-  background-color: #fff5f8;
-  color: var(--pink);
-  padding: 1.5px;
-  margin-bottom: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  max-width: 70%;
-  word-wrap: break-word;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 10px;
-}
-
-#commentCount,
-h3 {
-  font-weight: bold;
-  color: var(--pink);
-}
-
-#commentsList li p {
-  font-size: 1rem;
-  color: #000000;
+  .rsvp button {
+    width: 100%;
+  }
 }
