@@ -254,3 +254,27 @@ function fetchComments() {
 }
 
 window.addEventListener('load', fetchComments);
+
+// Animation
+const revealElements = document.querySelectorAll('.reveal');
+
+function handleScrollReveal() {
+  revealElements.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementBottom = el.getBoundingClientRect().bottom;
+
+    // Tambahkan animasi saat elemen terlihat
+    if (elementTop < windowHeight - 100 && elementBottom > 0) {
+      el.classList.add('scroll-visible');
+    }
+    // Hapus class saat elemen keluar dari layar
+    else {
+      el.classList.remove('scroll-visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScrollReveal);
+window.addEventListener('load', handleScrollReveal);
+

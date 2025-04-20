@@ -54,6 +54,19 @@ body {
   }
 }
 
+/* animasi  */
+.reveal {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.reveal.scroll-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* ======================================= */
 /* General */
 /* ======================================= */
