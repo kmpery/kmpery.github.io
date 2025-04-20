@@ -725,6 +725,14 @@ footer li {
     font-size: 65%;
   }
 
+  #hero a,
+  .alamat a,
+  #my-form button,
+  #comments button {
+    padding: 0.75em 1.5em;
+    font-size: 1.1em;
+  }
+
   .simply-countdown > .simply-section {
     padding: 60px;
     margin: 5px;
@@ -767,7 +775,8 @@ footer li {
 
   input,
   label,
-  textarea {
+  textarea,
+  select {
     font-size: 16px !important;
   }
 }

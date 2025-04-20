@@ -5,7 +5,7 @@ const Comment = require('../models/comment');
 // Ambil komentar terbaru dulu
 router.get('/', async (req, res) => {
   try {
-    const comments = await Comment.find().sort({ createdAt: -1 }); // urutkan terbaru
+    const comments = await Comment.find().sort({ createdAt: -1 });
     res.json(comments);
   } catch (err) {
     res.status(500).json({ message: 'Gagal mengambil komentar' });
