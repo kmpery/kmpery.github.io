@@ -576,12 +576,13 @@ ul.list-group li {
 }
 
 #commentsList li {
-  background-color: #fff5f8;
+  background-color: #ebd8de;
   padding: 1.5px;
   margin-top: 30px;
   margin-bottom: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   max-width: 70%;
   word-wrap: break-word;
   position: relative;
