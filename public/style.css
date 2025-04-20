@@ -200,6 +200,37 @@ h1 span {
   color: #ffffff;
 }
 
+.arrow-down {
+  text-align: center;
+  color: var(--pink);
+}
+
+.arrow-down .arrow {
+  display: block;
+  font-size: 3.5rem;
+  animation: waveBounce 1.5s infinite;
+}
+
+.arrow-down .arrow:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.arrow-down .arrow:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes waveBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.2;
+  }
+}
+
 /* ======================================= */
 /* Navbar  */
 /* ======================================= */

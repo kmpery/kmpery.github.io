@@ -61,6 +61,8 @@ function enableScroll() {
   rootElement.style.scrollBehavior = 'smooth';
   // localStorage.setItem('opened', 'true'); // local
   playAudio();
+  document.getElementById('bukaUndangan').style.display = 'none';
+  document.getElementById('arrowDown').style.display = 'none';
 }
 
 function playAudio() {
